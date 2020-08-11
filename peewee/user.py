@@ -40,5 +40,14 @@ User.insert_many(data, validate_fields=Field).execute()
 #user1 = User[2]
 #print(user1.name)
 
-for user in User.select():
+#for user in User.select():
+#    print(user.email)
+
+#menampilkan data dengan filter
+"""users = User.select().where((User.name == 'test') | (User.name == 'test2'))
+for user in users:
+    print(user.email)
+"""
+users = User.select().where(User.name.contains('test'))
+for user in users:
     print(user.email)
