@@ -14,10 +14,17 @@ class Pengguna(Model):
 sqlite_db.connect()
 sqlite_db.create_tables([Pengguna], safe=True)
 
-users = Pengguna.select().order_by(Pengguna.point.desc())
+#users = Pengguna.select().order_by(Pengguna.point.desc())
 
-for user in users:
-    print(user.username) + ' ' + str(user.point)
+#for user in users:
+#    print(user.username) + ' ' + str(user.point)
+
+user = Pengguna.select().where(Pengguna.username == 'yudhi').get()
+user.username = 'yudhirangga'
+user.save()
+
+user.update(point = 100).where(Pengguna.username == 'rangga').execute()
+
 
 '''
 def get_rand():
