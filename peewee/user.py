@@ -26,7 +26,7 @@ sqlite_db.create_tables([User], safe=True)
 ]
 
 print(User.insert_many(data_source).execute()) '''
-
+'''
 data = [
     {'test6','test6@test.test'},
     {'test7','test7@test.test'}
@@ -34,3 +34,5 @@ data = [
 fields = [User.name, User.email]
 
 User.insert_many(data, validate_fields=Field).execute()
+
+'''
