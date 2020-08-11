@@ -36,3 +36,9 @@ fields = [User.name, User.email]
 User.insert_many(data, validate_fields=Field).execute()
 
 '''
+#mencari berdasar id
+#user1 = User[2]
+#print(user1.name)
+
+for user in User.select():
+    print(user.email)
