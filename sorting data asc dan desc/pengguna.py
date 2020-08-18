@@ -12,7 +12,7 @@ class Pengguna(Model):
         database = sqlite_db
 
 sqlite_db.connect()
-sqlite_db.create_tables([Pengguna], safe=True)
+sqlite_db.create_tgitables([Pengguna], safe=True)
 
 #hitung jumlah data
 #print(Pengguna.select().count())
